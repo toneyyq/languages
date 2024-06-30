@@ -22,20 +22,19 @@ This software generates Shopizer labels for a new language. Shopizer comes with 
   - Build language application
 
 ```sh
-cd LanguagePackBuilder
+cd languages
 mvnw clean install
 ```
 
   - Execute generate language
-    - Requires shopizer directory absolute path (1)
-    - Requires target language 2 letter iso code (example es for Spanish) (2)
+    - Requires shopizer directory absolute path(eg. D:/shopizer)) (1)
+    - Requires target language 2 letter iso code (eg. es for Spanish) (2)
     - Requires AWS access key (3)
     - Requires AWS secret access key (4)
     - parameters 1 and 2 to be sent as execution parameters and parameters 3 and 4 to be sent as environment variables
 
 ```sh
-cd target
-java -jar LanguagePackBuilder-1.0.0-SNAPSHOT.jar com.shopizer.tools.language.LanguagePackBuilder path language -DAWS_ACCESS_KEY_ID=abd...xyz -DAWS_SECRET_ACCESS_KEY=xyz...123
+java -jar target/LanguagePackBuilder-1.0.0-SNAPSHOT-jar-with-dependencies.jar path language accessKey secretKey
 ```
 #### Share your new language with us !
 
