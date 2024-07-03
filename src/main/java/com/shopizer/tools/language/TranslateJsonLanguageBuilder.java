@@ -8,9 +8,9 @@ import com.shopizer.tools.language.process.JsonLanguageBuilder;
 public class TranslateJsonLanguageBuilder {
 
 
-    public static final String targetISOLanguage = "fr";
+    public static final String targetISOLanguage = "zh";
 
-    private static final String filePath = "/Users/username/Documents/dev/workspace/shopizer/shop/shopizer/packages/theme/lang/en.json";
+    private static final String filePath = "/Shopizer/shopizer-admin";
 
     private static final String adminPath = "src/assets/i18n/";
 
@@ -19,6 +19,8 @@ public class TranslateJsonLanguageBuilder {
     private static final String accessKey = "";
 
     private static final String secretKey = "";
+
+    private static final boolean isAdmin = true;
 
     public static void main(String args[]) {
 
@@ -38,12 +40,11 @@ public class TranslateJsonLanguageBuilder {
             isAdmin = Boolean.parseBoolean(args[4]);
 
         }
-
         langPackApp.translateFromExisting(args[0], args[1], args[2], args[3], isAdmin);
         langPackApp.printInstructions(args[0], args[1]);
 
-
-//        langPackApp.translateFromExisting(filePath, targetISOLanguage, accessKey, secretKey, true);
+//
+//        langPackApp.translateFromExisting(filePath, targetISOLanguage, accessKey, secretKey, isAdmin);
 //        langPackApp.printInstructions(filePath, targetISOLanguage);
 
 
