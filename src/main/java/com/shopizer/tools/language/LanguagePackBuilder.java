@@ -21,9 +21,11 @@ public class LanguagePackBuilder {
 	public static final String shopizerRootPath = "D:/workspaces/Shopizer/shopizer";
 
 	private static final String pathToBundlesFiles = "/sm-shop/src/main/resources/bundles";
-	private static List<String> bundleFileNames = new ArrayList<>(Arrays.asList("shopizer", "shipping", "payment", "messages"));
+	private static final List<String> bundleFileNames = new ArrayList<>(Arrays.asList("shopizer", "shipping", "payment", "messages"));
 
+    private static final String accessKey = "";
 
+    private static final String secretKey = "";
 	public static void main(String args[]) {
 
 		if (args.length == 0) {
@@ -40,7 +42,7 @@ public class LanguagePackBuilder {
 	    langPackApp.printInstructions(args[1], args[0]);
 
 
-//		langPackApp.translateFromExisting(shopizerRootPath, targetISOLanguage);
+//		langPackApp.translateFromExisting(shopizerRootPath, targetISOLanguage, accessKey, secretKey);
 //		langPackApp.printInstructions(targetISOLanguage, shopizerRootPath);
 
 
@@ -54,7 +56,6 @@ public class LanguagePackBuilder {
 
 			String fullPath = shopizerRoot + pathToBundlesFiles + "/" + file;
 			builder.process(fullPath, targetISOLang, accessKey, secretKey);
-
 		}
 
 	}
